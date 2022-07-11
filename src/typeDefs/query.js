@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server");
 
-const types = gql`
+const query = gql`
    type Query{
     agenda: [Contato!]!
     contato: Contato!
@@ -9,4 +9,4 @@ const types = gql`
     }
 `;
 
-module.exports = querys;
+module.exports = query;

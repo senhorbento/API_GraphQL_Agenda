@@ -1,6 +1,6 @@
 const { gql } = require("apollo-server");
 
-const types = gql`
+const mutation = gql`
     type Mutation{
         criarContato(nome: String!, telefone: String!, email: String): Contato!
         atualizarContato(id:ID!, nome: String, telefone: String, email: String): Contato!
@@ -8,4 +8,4 @@ const types = gql`
     }
 `;
 
-module.exports = mutations;
+module.exports = mutation;
