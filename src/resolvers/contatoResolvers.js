@@ -2,10 +2,10 @@ const Contato = require("../models/Contato");
 
 const resolvers = {
     Query:{
-        Agenda(){
+        agenda(){
             return Contato.find();
         },
-        Contato(_, args){
+        contato(_, args){
             return Contato.findOne(args.id);
         },
         obterContatoPorEmail(_,args){

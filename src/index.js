@@ -7,7 +7,7 @@ const resolvers = require("./resolvers");
 
 const server = new ApolloServer({typeDefs, resolvers});
 
-mongoose.connect('mongodb://localhost/Agenda');
+mongoose.connect('mongodb://localhost:27017/Agenda');
 mongoose.Promise = global.Promise;
 
 server.listen(PORTA);
