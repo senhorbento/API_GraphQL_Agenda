@@ -5,7 +5,7 @@ const resolvers = {
         async agenda(){
             return await Contato.find();
         },
-        async contato(_, args){
+        async obterContatoPorID(_, args){
             return await Contato.findOne(args.id);
         },
         async obterContatoPorEmail(_,args){
