@@ -2,17 +2,17 @@ const Contato = require("../models/Contato");
 
 const resolvers = {
     Query:{
-        agenda(){
-            return Contato.find();
+        async agenda(){
+            return await Contato.find();
         },
-        contato(_, args){
-            return Contato.findOne(args.id);
+        async contato(_, args){
+            return await Contato.findOne(args.id);
         },
-        obterContatoPorEmail(_,args){
-            return Contato.findOne(args.email);
+        async obterContatoPorEmail(_,args){
+            return await Contato.findOne(args.email);
         },
-        obterContatoPorTelefone(_,args){
-            return Contato.findOne(args.telefone);
+        async obterContatoPorTelefone(_,args){
+            return await Contato.findOne(args.telefone);
         }
     },
     Mutation:{
@@ -32,3 +32,5 @@ const resolvers = {
         }
     }
 };
+
+module.exports = resolvers;
