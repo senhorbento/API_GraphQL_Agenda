@@ -6,28 +6,27 @@ const resolvers = {
             return await Contato.find();
         },
         async obterContatoPorID(_, args){
-            return await Contato.findOne(args.id);
+            const id = args.id;
+            return await Contato.findOne({_id: id});
         },
         async obterContatoPorEmail(_,args){
-            return await Contato.findOne(args.email);
+            const email = args.email;
+            return await Contato.findOne({email: email});
         },
         async obterContatoPorTelefone(_,args){
-            return await Contato.findOne(args.telefone);
+            const telefone = args.telefone;
+            return await Contato.findOne({telefone: telefone});
         }
     },
     Mutation:{
-        criarContato(_,args){
-            const novoContato = {
-                nome: args.nome,
-                telefone: args.telefone,
-                email: args.email
-            }
-            return novoContato;
+        async criarContato(_,args){
+            const novoContato = {nome: args.nome, telefone: args.telefone, email: args.email};
+            return await Contato.create(novoContato);
         },
-        atualizarContato(_,args){
-
+        async atualizarContato(_,args){
+            
         },
-        excluirContato(_,args){
+        async excluirContato(_,args){
 
         }
     }

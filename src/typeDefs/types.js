@@ -2,7 +2,7 @@ const { gql } = require("apollo-server");
 
 const types = gql`
    type Contato{
-        id: ID
+        _id: ID
         nome: String!
         telefone: String!
         email: String
