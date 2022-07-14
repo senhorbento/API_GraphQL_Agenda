@@ -24,10 +24,13 @@ const resolvers = {
             return await Contato.create(novoContato);
         },
         async atualizarContato(_,args){
-            
+            const id = {_id: args.id};
+            const novosDados = {nome: args.nome, telefone: args.telefone, email: args.email};
+            return await Contato.updateOne(id, {$set: novosDados});
         },
         async excluirContato(_,args){
-
+            const id = {_id: args.id};
+            return await Contato.deleteOne(id);
         }
     }
 };
